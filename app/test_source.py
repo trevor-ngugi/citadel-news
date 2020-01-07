@@ -18,5 +18,12 @@ class TestSource(unittest.TestCase):
         """
         self.assertTrue(isinstance(self.new_source,Source))
 
+    def test_init(self):
+        """
+        to check if the objects are initated corectly
+        """
+        self.assertEqual(self.new_source.id,'abc')
+        self.assertEqual(self.new_source.name,'abc')
+
 if __name__ == "__main__":
     unittest.main()
