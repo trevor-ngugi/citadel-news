@@ -18,17 +18,17 @@ class TestArticle(unittest.TestCase):
         """
         self.assertTrue(isinstance(self.new_article,Article))
 
-    # def test_init(self):
-    #     """
-    #     Tests for proper instantiation
-    #     """
-    #     self.assertEqual(self.new_article.author, "Bob")
-    #     self.assertEqual(self.new_article.title, "Random Title")
-    #     self.assertEqual(self.new_article.description, "Short")
-    #     self.assertEqual(self.new_article.url, "random.com")
-    #     self.assertEqual(self.new_article.img, "random.jpg")
-    #     self.assertEqual(self.new_article.date, "12/12/12")
-    #     self.assertEqual(self.new_article.content, "None")
+    def test_init(self):
+        """
+        Tests for proper instantiation
+        """
+        self.assertEqual(self.new_article.author, "Bob")
+        self.assertEqual(self.new_article.title, "Random Title")
+        self.assertEqual(self.new_article.description, "Short")
+        self.assertEqual(self.new_article.url, "random.com")
+        self.assertEqual(self.new_article.urlToImage, "random.jpg")
+        self.assertEqual(self.new_article.published_At, "12/12/12")
+        self.assertEqual(self.new_article.content, "None")
 
 if __name__ == "__main__":
     unittest.main()
