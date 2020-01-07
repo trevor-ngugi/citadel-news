@@ -29,3 +29,21 @@ def get_top_news():
             news_results=process_results(news_results_list)
 
     return news_results
+
+def process_results(news_list):
+    """
+    function that will process the news results and turn them into objects
+    """
+    top_news_results=[]
+    for item in news_list:
+        author=item.get('author')
+        title=item.get('title')
+        description=item.get('description')
+        url=item.get('url')
+        urlToImage=item.get('urlToImage')
+        published_At=item.get('publishedAt')
+        content=item.get('content')
+
+        if urlToImage:
+            news_object=Article(author,title,description,url,urlToImage,published_At,content)
+            top_news_results.append(news_object)
