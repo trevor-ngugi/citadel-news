@@ -22,11 +22,8 @@ idna==2.6
 itsdangerous==1.1.0
 Jinja2==2.10.3
 
-language-selector==0.1
-launchpadlib==1.10.6
-lazr.restfulclient==0.14.2
-lazr.uri==1.0.3
-louis==3.8.0
+
+
 
 Mako==1.0.7
 MarkupSafe==1.1.0
