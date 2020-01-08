@@ -30,6 +30,29 @@ def get_top_news():
 
     return news_results
 
+def get_sources():
+    """
+    function that  gets the  json response to our url request
+    """
+    get_sources_url=news_sources_base_url.format(api_key)
+
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data=url.read()
+        get_sources_response=json.loads(get_sources_data)
+
+        sources_results=None
+
+        if get_sources_response['sources']:
+            sources_results_list=get_sources_response['sources']
+            sources_results=process_results2(sources_results_list)
+
+    return sources_results
+
+    
+    # get_sources_response = get(get_sources_url).json()
+
+    # return get_sources_response["sources"]
+
 def process_results(news_list):
     """
     function that will process the news results and turn them into objects
@@ -48,3 +71,18 @@ def process_results(news_list):
             news_object=Article(author,title,description,url,urlToImage,published_At,content)
             top_news_results.append(news_object)
     return top_news_results
+
+def process_results2(sources_list):
+    """
+    function that will process the sources results and turn them into objects
+    """
+    top_sources_results=[]
+    for item in sources_list:
+        id=item.get('id')
+        name=item.get('name')
+
+        if name:
+            sources_object=Source(id,name)
+            top_sources_results.append(sources_object)
+    return top_sources_results
+

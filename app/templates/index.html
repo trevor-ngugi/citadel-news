@@ -15,6 +15,15 @@
     <p>see breaking news from different sources</p>
     <p>the right place to be</p>
 
+    <!-- sources -->
+    <h3>sources</h3>
+    
+    <div class="list-group list-group-flush">
+            {%for source in sources%}
+            <a href="/source/{{source.id}}" class="list-group-item list-group-item-action">{{source.name}}</a>
+            {%endfor%}
+    </div>
+
     <!-- headlines -->
     <h3> headline news</h3>
     <ul>
