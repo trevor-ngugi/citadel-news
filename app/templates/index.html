@@ -14,5 +14,47 @@
     <p>welcome to the citadel news webiste</p>
     <p>see breaking news from different sources</p>
     <p>the right place to be</p>
+
+    <!-- headlines -->
+    <h3> headline news</h3>
+    <ul>
+        {% for article in top_news %}
+        <!-- <li>{{ article.author}}</li>
+           <li>{{ article.title}}</li>
+           <li>{{ article.description}}</li>
+           <li>{{ article.url}}</li>
+           <li>{{ article.urlToImage}}</li>
+           <li>{{ article.publishedAt}}</li>
+           <li>{{ article.content}}</li> -->
+
+        <div class="jumbotron text-center hoverable p-4">
+            <div class="row">
+                <div class="col-md-6 offset-md-1 mx-3 my-3">
+                    <div class="view overlay">
+                        <img src="{{article.urlToImage}}" class="img-fluid"
+                            alt="Sample image for first version of blog listing">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5 text-md-left ml-3 mt-3">
+                    </a>
+                    <h4 class="h4 mb-4">{{article.title}}</h4>
+                    {%if article.content%}
+                    <p class="font-weight-normal">{{article.content | truncate(120)}}</p>
+                    {%endif%}
+                    <p class="font-weight-normal">by <a><strong>{{article.author}}</strong></a>,
+                    </p>
+                    <a href="{{article.url}}" target="_blank" style="color: #fff;">
+                        <button  class="btn">Read More <i
+                                class="fas fa-link"></i></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
 </div>
+
 </html>
