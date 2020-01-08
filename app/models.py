@@ -10,3 +10,11 @@ class Article:
         self.urlToImage=urlToImage
         self.published_At=published_At
         self.content=content
+
+class Source:
+    """
+    source class to define the source objects
+    """
+    def __init__(self,id,name):
+        self.id=id
+        self.name=name
